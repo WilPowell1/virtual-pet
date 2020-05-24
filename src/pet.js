@@ -58,5 +58,9 @@ Pet.prototype.checkup = function() {
     }
 };
 
+Pet.prototype.adoptChild = function() {
+    this.children.push(child);
+}
+
 
 module.exports = Pet;

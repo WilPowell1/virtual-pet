@@ -115,4 +115,18 @@ describe('Checkup', () => {
 
         expect(pet.checkup()).toEqual('I feel great!');
     });
+
+    describe('adopt a child', () => {
+
+        it('returns an object', () => {
+            const parent = new Pet('Napoleon');
+            const child = new Pet('Caligula');
+
+            parent.adoptChild(child);
+
+            parent.children;
+
+            expect(pet.adoptChild(child)).toEqual('Caligula');
+        });
+    });
 });
