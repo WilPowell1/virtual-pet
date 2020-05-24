@@ -76,7 +76,7 @@ describe('feed', () => {
     });
 });
 
-describe('Checkup', () => {
+describe('checkup', () => {
 
     it('fitness is 3 or less', () => {
         const pet = new Pet('Napoleon');
@@ -115,18 +115,27 @@ describe('Checkup', () => {
 
         expect(pet.checkup()).toEqual('I feel great!');
     });
+});
 
-    describe('adopt a child', () => {
+describe('adopt a child', () => {
 
-        it('returns an object', () => {
-            const parent = new Pet('Napoleon');
-            const child = new Pet('Caligula');
+    it('returns a new Pet and injecting into Pet instance', () => {
+        const parent = new Pet('Napoleon');
+        const child = new Pet('Caligula');
 
-            parent.adoptChild(child);
+        parent.adoptChild(child);
 
-            parent.children;
+        expect(parent.children.length).toBe(1);
+    });
+});
 
-            expect(pet.adoptChild(child)).toEqual('Caligula');
-        });
+describe('have a baby', () => {
+
+    it('returns a new Pet from inside Pet instance', () => {
+        const parent = new Pet('Napoleon');
+
+        parent.haveBaby('Napoleon');
+
+        expect(parent.children.length).toBe(1);
     });
 });
